@@ -1,10 +1,54 @@
-웹 어플리케이션을 위한 지구본 기반 WebGL GIS 엔진 활용법에 대해 소개합니다.
+### Introduction
+> WebGL 기반 3D 지도 데이터 가시화 엔진  
 
+### 특징
+> * 웹 표준 기술 HTML5, WebGL 기반 3D 렌더링 지원
+> * 멀티 OS(Windows, Android, IOS), 멀티 브라우저(IE11, Windows Edge, FireFox, Chrome, Safari), No-Plugin 지원
+> * 3차원 공간데이터 웹 개발자를 위한 다양한 Javascript 웹 API 지원
+> * 거리, 면적 체적 계산 등 기본적인 3차원 분석기능 제공
+> * 다양한 도시계획 시뮬레이션 및 분석 기능 제공
+> * 공간정보 오픈플랫폼(V World) 데이터 서비스 가능
 
-## Getting started
+### 기능
+> * 대규모 3차원 공간데이터 로딩 및 사용자 시점에 따른 레벨 별 출력 기능
+> * 다양한 형태의 3차원 데이터 조망과 자유로운 시야 컨트롤 기능
+> * 좌표계 설정변환, 레이어 제어 등 편리한 공간 객체 관리 기능
+> * 행성규모의 대용량 지형 및 위성, 항공영상 지형 Mapping 지원
+> * 가시권, 일조권, 스카이라인 사선분석 등 다양한 분석 기능 제공
+> * 3DS, ASE, OBJ 등 다양한 3차원 모델링 파일 불러오기 기능
+> * KML, KMZ, GML 등 표준 포맷 지원
+> * 지구본 단위 V World 서비스에 다양한 MashUP 기능 제공
 
+### 적용분야
+> GIS, UIS, LBS, 시설물관리, 조감도, 입지분석, 지형분석, 도시계획, 건축현장관리, 농지관리 등
 
-### 1. 엔진 파일 로드
+### Architecture
+> 
+
+### License
+> 
+
+### Lastest release
+> * v_0.1.0 Released (2021-05-20)
+
+### System requirements
+> * Google Chrome
+> * Mozilla Firefox
+> * Apple Safari
+> * Opera
+
+### Documenttation
+> http://api.xdmap.com/Manual
+
+### Developers
+> http://www.egiskorea.com/
+
+### Demos
+> http://www.dtwincloud.com:8080/dt_reference/code/main.do?id=start
+
+### Get Started
+
+#### Step 1. 엔진 파일 로드
 > 엔진 파일은 총 3개 파일로 구성됩니다.
 > * XDWorldEM.asm.js
 > * XDWorldEM.html.mem
@@ -19,7 +63,7 @@
 > <img src="http://api.xdmap.com/Manual/custom/img/initEnvironment/02.png" align="center"></img>
 
 
-### 2. Canvas 연결하기
+#### Step 2. Canvas 연결하기
 > Module 객체가 생성되면 지도를 출력하는 canvas와 Module 객체를 연결합니다.
 > 
 > Module.canvas 속성에 canvas 엘리먼트를 대입하여 지도를 출력할 canvas를 지정할 수 있습니다.
@@ -61,7 +105,7 @@
 > ```
 
 
-### 3. 엔진 초기화 함수 실행
+#### Step 3. 엔진 초기화 함수 실행
 > 엔진 파일이 모두 로드되면 엔진 환경 초기화 함수를 연결합니다.
 > 
 > 초기화 함수는 Module 객체의 postRun 속성 대입하여 지정합니다.
@@ -83,7 +127,7 @@
 > <img src="http://api.xdmap.com/Manual/custom/img/initEnvironment/03.png" align="center"></img>
 
 
-### 3. 엔진 구동
+#### Step 4. 엔진 구동
 > Module.Start API를 호출하면 엔진 렌더링이 시작됩니다.
 > ```
 > function init( ) {
@@ -95,14 +139,14 @@
 > <img src="http://api.xdmap.com/Manual/custom/img/initEnvironment/04.png" align="center"></img>
 
 
-## 배포 엔진 파일 구성
+#### 배포 엔진 파일 구성
 > <img src="http://api.xdmap.com/Manual/custom/img/initEnvironment_sample/00.png" align="center"></img>
 > 
 > 엔진 파일은 버전 별로 엔진파일 / 실행 스크립트 / 기본 HTML 페이지를 함께 배포합니다.
 > 
 > index.html 페이지에서 init.js 스크립트를 호출하고, init.js 스크립트는 엔진 로드, Canvas 설정, 초기화 함수 설정, 지도 데이터 로드 과정을 실행합니다.
 > 
-> *[HTML] index.html*
+> [HTML] index.html
 > ```
 > <!doctype html>
 > <html>
@@ -119,13 +163,12 @@
 > </html>
 > ```
 > 
-> *[JavaScript] init.js*
+> [JavaScript] init.js
 > ```
 > // 엔진 로드 후 실행할 초기화 함수(Module.postRun)
 > function init() {
 > 
 > 	// 엔진 초기화 API 호출(필수)
-> 	Module.SetAPIKey("767B7ADF-10BA-3D86-AB7E-02816B5B92E9");	// 이 곳에 배포된 브이월드 API 키를 입력하세요.
 > 	Module.Start(window.innerWidth, window.innerHeight);
 > }
 > 
@@ -172,7 +215,7 @@
 > )();
 > 
 > var Module = {
->	TOTAL_MEMORY: 256*1024*1024,
+>	TOTAL_MEMORY: 256\*1024\*1024,
 > 	postRun: [init],
 > 	canvas: (function() {
 > 		
@@ -195,9 +238,3 @@
 > })()
 > };
 > ```
-
-## Demo
-http://www.dtwincloud.com:8080/dt_reference/code/main.do?id=start
-
-## 최신 Release 정보 (0.1.0 / 2021-05-17)
-* 0.1.0 버전 Release
