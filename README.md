@@ -181,7 +181,7 @@
 > 	var xhr = new XMLHttpRequest();
 > 	xhr.open('GET', file, true);
 > 	xhr.onload = function() {
-	
+> 
 > 		var script = document.createElement('script');
 > 		script.innerHTML = xhr.responseText;
 > 		document.body.appendChild(script);
@@ -215,7 +215,7 @@
 > )();
 > 
 > var Module = {
->	TOTAL_MEMORY: 256\*1024\*1024,
+>	TOTAL_MEMORY: 256*1024*1024,
 > 	postRun: [init],
 > 	canvas: (function() {
 > 		
