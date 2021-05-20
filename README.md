@@ -192,7 +192,7 @@
 > 		// 생성한 Canvas 엘리먼트를 body에 추가합니다.
 > 		document.body.appendChild(canvas);
 > 		return canvas;
-> 	})()
+> })()
 > };
 > ```
 
