@@ -102,7 +102,7 @@
 > 
 > index.html 페이지에서 init.js 스크립트를 호출하고, init.js 스크립트는 엔진 로드, Canvas 설정, 초기화 함수 설정, 지도 데이터 로드 과정을 실행합니다.
 > 
-> [HTML] index.html
+> *[HTML] index.html*
 > ```
 > <!doctype html>
 > <html>
@@ -121,7 +121,7 @@
 > </html>
 > ```
 > 
-> [JavaScript] init.js
+> *[JavaScript] init.js*
 > ```
 > // 엔진 파일 로드
 > ;(function(){   	
