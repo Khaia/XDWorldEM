@@ -37,7 +37,7 @@
 > * Apple Safari
 > * Opera
 
-### Documenttation
+### Documentation
 > http://api.xdmap.com/Manual
 
 ### Developers
