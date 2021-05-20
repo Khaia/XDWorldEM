@@ -34,7 +34,7 @@
 >
 > ```
 > var Module = {
-> 
+> 	TOTAL_MEMORY: 256*1024*1024,
 > 	postRun : [init],
 > 	canvas : (function() {
 > 	
@@ -148,7 +148,7 @@
 > 			(function() {
 > 				var memoryInitializer = "./js/XDWorldEM.html.mem";
 > 				var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
->         xhr.open('GET', memoryInitializer, true);
+>         			xhr.open('GET', memoryInitializer, true);
 > 					xhr.responseType = 'arraybuffer';
 > 					xhr.onload =  function(){
 > 						
@@ -172,6 +172,7 @@
 > )();
 > 
 > var Module = {
+>	TOTAL_MEMORY: 256*1024*1024,
 > 	postRun: [init],
 > 	canvas: (function() {
 > 		
